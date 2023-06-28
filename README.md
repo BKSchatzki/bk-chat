@@ -1,1 +1,1 @@
-# chat-appwrite
+# chat-appwite
