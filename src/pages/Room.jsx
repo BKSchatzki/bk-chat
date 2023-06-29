@@ -33,7 +33,13 @@ const Room = () => {
   }
 
   const getMessages = async () => {
-    const response = await databases.listDocuments(DATABASE_ID, COLLECTION_ID_MESSAGES)
+    const response = await databases.listDocuments(
+      DATABASE_ID,
+      COLLECTION_ID_MESSAGES,
+      [
+        Query.orderDesc('$createdAt')
+      ]
+      )
     console.log('RESPONSE:', response);
     setMessages(response.documents);
   }
