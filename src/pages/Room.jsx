@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { databases, DATABASE_ID, COLLECTION_ID_MESSAGES } from '../appwriteConfig'
-import { ID } from 'appwrite'
+import { ID, Query } from 'appwrite'
 
 const Room = () => {
 
@@ -26,6 +26,8 @@ const Room = () => {
     )
 
     console.log('Created:', response);
+
+    setMessages(prevState => [response, ...messages]);
 
     setMessageBody('');
   }
