@@ -16,22 +16,26 @@ const Room = () => {
   }
 
   return (
-    <div>
-      <div>
-        {messages.map(message => (
-          <div key={message.$id}>
-            
-            <div>
-              <p>{message.$createdAt}</p>
+    <main className='container'>
+
+      <div className="room--container">
+        <div>
+          {messages.map(message => (
+            <div key={message.$id} className='message--wrapper'>
+              
+              <div className='message--header'>
+                <small className='message-timestamp'>{message.$createdAt}</small>
+              </div>
+              
+              <div className='message--body'>
+                <span>{message.body}</span>
+              </div>
             </div>
-            
-            <div>
-              <span>{message.body}</span>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+
+    </main>
   )
 }
 
