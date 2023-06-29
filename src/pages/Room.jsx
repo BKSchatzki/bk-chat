@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { databases, DATABASE_ID, COLLECTION_ID_MESSAGES } from '../appwriteConfig';
 import { ID, Query } from 'appwrite';
+import { Trash2 } from 'react-feather';
 
 const Room = () => {
 
@@ -63,33 +64,42 @@ const Room = () => {
 
       <div className="room--container">
 
-        <form onSubmit={handleSubmit} id='message--form' action="">
+        <form
+          action=""
+          id='message--form'
+          onSubmit={handleSubmit}
+        >
           <div>
             <textarea
-              required
               maxLength='1000'
-              placeholder='Say something...'
               onChange={(e) => {setMessageBody(e.target.value)}}
+              placeholder='Say something...'
+              required
               value={messageBody}
             ></textarea>
           </div>
 
           <div className='send-btn--wrapper'>
             <input
+              className='btn btn-secondary'
               type="submit"
               value='Send'
-              className='btn btn-secondary'/>
+            />
           </div>
         </form>
 
         <div>
           {messages.map(message => (
-            <div key={message.$id} className='message--wrapper'>
-              
+            <div
+              className='message--wrapper'
+              key={message.$id}
+            >
               <div className='message--header'>
                 <small className='message-timestamp'>{message.$createdAt}</small>
-
-                <button onClick={() => {deleteMessage(message.$id)}}>X</button>
+                <Trash2
+                  className='delete--btn'
+                  onClick={() => {deleteMessage(message.$id)}}
+                />
               </div>
               
               <div className='message--body'>
