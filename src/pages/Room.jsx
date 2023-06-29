@@ -95,7 +95,7 @@ const Room = () => {
               key={message.$id}
             >
               <div className='message--header'>
-                <small className='message-timestamp'>{message.$createdAt}</small>
+                <small className='message-timestamp'>{new Date(message.$createdAt).toLocaleString()}</small>
                 <Trash2
                   className='delete--btn'
                   onClick={() => {deleteMessage(message.$id)}}
