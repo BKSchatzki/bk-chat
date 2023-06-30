@@ -30,7 +30,7 @@ export const AuthProvider = ({children}) => {
 
     try {
       const response = await account.createEmailSession(credentials.email, credentials.password);
-      const accountDetails = account.get();
+      const accountDetails = await account.get();
       setUser(accountDetails);
       navigate('/');
     } catch(error) {
