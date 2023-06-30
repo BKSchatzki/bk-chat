@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
+import { account } from "../appwriteConfig";
 
 const AuthContext = createContext()
 
@@ -11,8 +12,19 @@ export const AuthProvider = ({children}) => {
     setLoading(false)
   }, [])
 
+  const handleUserLogin = async (e, credentials) => {
+    e.preventDefault();
+
+    try {
+      const response = await account.createEmailSession(credentials.email, credentials.password);
+    } catch(error){
+      console.error(error);
+    }
+  }
+
   const contextData = {
-    user
+    user,
+    handleUserLogin
   }
   
   return (

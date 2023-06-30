@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/AuthContext';
 
 const LoginPage = () => {
-  const {user} = useAuth();
+  const {user, handleUserLogin} = useAuth();
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState ({
@@ -22,13 +22,12 @@ const LoginPage = () => {
     let value = e.target.value;
 
     setCredentials({...credentials, [name]:value});
-    console.log(credentials);
   }
   
   return (
     <div className="auth--container">
       <div className="form-wrapper">
-        <form action="">
+        <form onSubmit={(e) => {handleUserLogin(e, credentials)}}>
           <div className="field--wrapper">
             <label htmlFor='login__email'>Email:</label>
             <input
