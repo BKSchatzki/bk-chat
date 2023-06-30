@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { databases, DATABASE_ID, COLLECTION_ID_MESSAGES } from '../appwriteConfig';
+import client, { databases, DATABASE_ID, COLLECTION_ID_MESSAGES } from '../appwriteConfig';
 import { ID, Query } from 'appwrite';
 import { Trash2 } from 'react-feather';
 
@@ -12,6 +12,14 @@ const Room = () => {
   // Set effects
   useEffect(() => {
     getMessages()
+
+    client.subscribe(`databases.${DATABASE_ID}.collections.${COLLECTION_ID_MESSAGES}.documents`, response => {
+      // Callback will be executed on changes for documents A and all files.
+      if(response.events.includes('databases.*.collections.*.documents.*.create'))
+        console.log('A MESSAGE WAS CREATED.');
+      if(response.events.includes('databases.*.collections.*.documents.*.delete'))
+        console.log('A MESSAGE WAS DELETED.');
+    });
   }, []);
 
   // Create
