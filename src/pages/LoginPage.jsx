@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/AuthContext';
 
@@ -6,15 +6,55 @@ const LoginPage = () => {
   const {user} = useAuth();
   const navigate = useNavigate();
 
+  const [credentials, setCredentials] = useState ({
+    email:'',
+    password:''
+  })
+
   useEffect(() => {
     if(user) {
       navigate('/');
     }
   })
+
+  const handleInputChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    setCredentials({...credentials, [name]:value});
+    console.log(credentials);
+  }
   
   return (
-    <div>
-      LOGIN
+    <div className="auth--container">
+      <div className="form-wrapper">
+        <form action="">
+          <div className="field--wrapper">
+            <label htmlFor='login__email'>Email:</label>
+            <input
+              id="login__email"
+              name="email"
+              placeholder="Enter your email..."
+              required
+              type="email"
+              value={credentials.email}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="field--wrapper">
+            <label htmlFor='password'>Password:</label>
+            <input
+              id="password"
+              name="password"
+              placeholder="Enter password..."
+              required
+              type="password"
+              value={credentials.password}
+              onChange={handleInputChange}
+            />
+          </div>
+        </form>
+      </div>
     </div>
   )
 }
