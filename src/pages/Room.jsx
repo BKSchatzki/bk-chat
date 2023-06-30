@@ -100,7 +100,7 @@ const Room = () => {
 
           <div className='send-btn--wrapper'>
             <input
-              className='btn btn-secondary'
+              className='btn btn--secondary'
               type="submit"
               value='Send'
             />
