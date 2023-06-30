@@ -53,6 +53,14 @@ const LoginPage = () => {
               onChange={handleInputChange}
             />
           </div>
+
+          <div className="field--wrapper">
+            <input
+              className="btn btn--lg btn--main"
+              type="submit"
+              value="Login"
+            />
+          </div>
         </form>
       </div>
     </div>
