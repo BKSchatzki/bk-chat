@@ -4,7 +4,7 @@ import { useAuth } from '../utils/AuthContext';
 
 const Header = () => {
 
-  const {user} = useAuth();
+  const {user, handleUserLogout} = useAuth();
 
   return (
     <div id="header--wrapper">
@@ -12,7 +12,10 @@ const Header = () => {
         ? (
           <>
             Welcome, {user.name}
-            <LogOut className="header--link" />
+            <LogOut 
+              className="header--link"
+              onClick={handleUserLogout}
+            />
           </>
         ):(
           <button>Login</button>
