@@ -13,7 +13,7 @@ const Room = () => {
   useEffect(() => {
     getMessages()
 
-    client.subscribe(`databases.${DATABASE_ID}.collections.${COLLECTION_ID_MESSAGES}.documents`, response => {
+    const unsubscribe = client.subscribe(`databases.${DATABASE_ID}.collections.${COLLECTION_ID_MESSAGES}.documents`, response => {
       // Callback will be executed on changes for documents A and all files.
       if(response.events.includes('databases.*.collections.*.documents.*.create')) {
         console.log('A MESSAGE WAS CREATED.');
@@ -21,9 +21,13 @@ const Room = () => {
       }
       if(response.events.includes('databases.*.collections.*.documents.*.delete')) {
         console.log('A MESSAGE WAS DELETED.');
-        setMessages(prevState => messages.filter(message => message.$id !== response.payload.$id));
+        setMessages(prevState => prevState.filter(message => message.$id !== response.payload.$id));
       }
     });
+
+    return () => {
+      unsubscribe();
+    }
   }, []);
 
   // Create
