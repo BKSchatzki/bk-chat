@@ -1,10 +1,13 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { account } from "../appwriteConfig";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext()
 
 export const AuthProvider = ({children}) => {
   
+  const navigate = useNavigate();
+
   const [loading, setLoading] = useState(true)
   const [user, setUser] = useState(null)
 
@@ -17,7 +20,10 @@ export const AuthProvider = ({children}) => {
 
     try {
       const response = await account.createEmailSession(credentials.email, credentials.password);
-    } catch(error){
+      const accountDetails = account.get();
+      setUser(accountDetails);
+      navigate('/');
+    } catch(error) {
       console.error(error);
     }
   }
