@@ -72,7 +72,7 @@ const Room = () => {
       COLLECTION_ID_MESSAGES,
       message_id
     );
-    // setMessages(prevState => messages.filter(message => message.$id !== message_id));
+    // setMessages(prevState => prevState.filter(message => message.$id !== message_id));
   }
 
   return (
