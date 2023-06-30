@@ -12,8 +12,18 @@ export const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    setLoading(false)
+    getUserOnLoad();
   }, [])
+
+  const getUserOnLoad = () => {
+    try {
+      const accountDetails = account.get();
+      setUser(accountDetails);
+    } catch(error) {
+      console.error(error);
+    }
+    setLoading(false);
+  }
 
   const handleUserLogin = async (e, credentials) => {
     e.preventDefault();
