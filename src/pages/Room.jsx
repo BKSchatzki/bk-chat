@@ -15,10 +15,14 @@ const Room = () => {
 
     client.subscribe(`databases.${DATABASE_ID}.collections.${COLLECTION_ID_MESSAGES}.documents`, response => {
       // Callback will be executed on changes for documents A and all files.
-      if(response.events.includes('databases.*.collections.*.documents.*.create'))
+      if(response.events.includes('databases.*.collections.*.documents.*.create')) {
         console.log('A MESSAGE WAS CREATED.');
-      if(response.events.includes('databases.*.collections.*.documents.*.delete'))
+        setMessages(prevState => [response.payload, ...prevState]);
+      }
+      if(response.events.includes('databases.*.collections.*.documents.*.delete')) {
         console.log('A MESSAGE WAS DELETED.');
+        setMessages(prevState => messages.filter(message => message.$id !== response.payload.$id));
+      }
     });
   }, []);
 
@@ -39,7 +43,7 @@ const Room = () => {
 
     console.log('Created:', response);
 
-    setMessages(prevState => [response, ...messages]);
+    // setMessages(prevState => [response, ...prevState]);
 
     setMessageBody('');
   }
@@ -64,7 +68,7 @@ const Room = () => {
       COLLECTION_ID_MESSAGES,
       message_id
     );
-    setMessages(prevState => messages.filter(message => message.$id !== message_id));
+    // setMessages(prevState => messages.filter(message => message.$id !== message_id));
   }
 
   return (
