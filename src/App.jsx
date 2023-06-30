@@ -1,7 +1,7 @@
-import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Room from './pages/Room'
-import LoginPage from './pages/LoginPage'
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Room from './pages/Room';
+import LoginPage from './pages/LoginPage';
 
 function App() {
 
@@ -15,4 +15,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
