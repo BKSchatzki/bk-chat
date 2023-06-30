@@ -5,7 +5,7 @@ const PrivateRoutes = () => {
   const user = false;
   return (
     <>
-      { user ? <Outlet /> : <Navigate to='/login' /> };
+      { user ? <Outlet /> : <Navigate to='/login' /> }
     </>
   )
 }
