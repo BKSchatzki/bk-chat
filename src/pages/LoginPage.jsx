@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/AuthContext';
 
 const LoginPage = () => {
@@ -60,6 +60,8 @@ const LoginPage = () => {
             />
           </div>
         </form>
+
+        <p>Don't have an account? Register <Link to="/register">here</Link>.</p>
       </div>
     </div>
   )
