@@ -43,10 +43,15 @@ export const AuthProvider = ({children}) => {
     setUser(null);
   }
 
+  const handleUserRegister = async () => {
+
+  }
+
   const contextData = {
     user,
     handleUserLogin,
-    handleUserLogout
+    handleUserLogout,
+    handleUserRegister
   }
   
   return (
