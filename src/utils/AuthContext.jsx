@@ -13,8 +13,7 @@ export const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    // Console log is temporary. Want to see what this is.
-    console.log(getUserOnLoad());
+    getUserOnLoad();
   }, [])
 
   const getUserOnLoad = async () => {
