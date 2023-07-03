@@ -55,10 +55,16 @@ export const AuthProvider = ({children}) => {
     try {
       let response = await account.create(
         ID.unique(),
+        // Why does it only seem to work when credentials.name is last?
         credentials.email,
         credentials.password,
         credentials.name
-      );
+        );
+
+      await account.createEmailSession(credentials.email, credentials.password);
+      const accountDetails = await account.get();
+      setUser(accountDetails);
+      navigate('/');
 
       console.log('REGISTERED:', response);
     } catch(error) {
