@@ -4,6 +4,7 @@ import { useAuth } from '../utils/AuthContext';
 
 const PrivateRoutes = () => {
   const {user} = useAuth();
+  console.log({user});
   
   return (
     <>

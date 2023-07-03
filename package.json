@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://BKSchatzki.github.io/chat-appwrite",
+  "homepage": "https://bkschatzki.github.io/chat-appwrite",
   "scripts": {
     "deploy": "vite build && gh-pages -d dist",
     "dev": "vite",

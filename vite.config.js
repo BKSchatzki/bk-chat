@@ -10,6 +10,6 @@ export default defineConfig({
   //     "Content-Security-Policy": "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' https://bkschatzki.github.io",
   //   },
   // },
-  base: '/chat-appwrite',
+  base: '/chat-appwrite/',
   plugins: [react()],
 })
