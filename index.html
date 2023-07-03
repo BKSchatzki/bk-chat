@@ -5,7 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://bkschatzki.github.io/chat-appwrite/ 'unsafe-inline' 'unsafe-eval'" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://bkschatzki.github.io/chat-appwrite/ 'unsafe-inline' 'unsafe-eval'" /> -->
+    <!-- Above is copied from TP, below is new idea, also can add CSP directive to vite.config.js -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' https://bkschatzki.github.io;">
   </head>
   <body>
     <div id="root"></div>
