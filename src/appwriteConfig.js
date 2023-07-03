@@ -8,8 +8,7 @@ const client = new Client();
 
 client
     .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('649c9624c091fba90803')
-    .setKey(import.meta.env.VITE_APPWRITE_API_KEY);
+    .setProject('649c9624c091fba90803');
 
 export const databases = new Databases(client);
 export const account = new Account(client);
