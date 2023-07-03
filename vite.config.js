@@ -8,5 +8,6 @@ export default defineConfig({
       'Content-Security-Policy': `style-src 'nonce-random' 'self'`,
     },
   },
+  base: '/chat-appwrite',
   plugins: [react()],
 })
