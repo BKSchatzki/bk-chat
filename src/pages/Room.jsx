@@ -9,16 +9,13 @@ const Room = () => {
 
   const {user} = useAuth();
 
-  // Set states
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
 
-  // Set effects
   useEffect(() => {
     getMessages()
 
     const unsubscribe = client.subscribe(`databases.${DATABASE_ID}.collections.${COLLECTION_ID_MESSAGES}.documents`, response => {
-      // Callback will be executed on changes for documents A and all files.
       if(response.events.includes('databases.*.collections.*.documents.*.create')) {
         console.log('A MESSAGE WAS CREATED.');
         setMessages(prevState => [response.payload, ...prevState]);
@@ -34,7 +31,6 @@ const Room = () => {
     }
   }, []);
 
-  // Create
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -54,15 +50,12 @@ const Room = () => {
       ID.unique(),
       payload
     );
-
-    console.log('Created:', response);
-
+    // console.log('Created:', response);
     // setMessages(prevState => [response, ...prevState]);
 
     setMessageBody('');
   }
 
-  // Read
   const getMessages = async () => {
     const response = await databases.listDocuments(
       DATABASE_ID,
@@ -71,11 +64,10 @@ const Room = () => {
         Query.orderDesc('$createdAt')
       ]
       );
-    console.log('RESPONSE:', response);
+    // console.log('RESPONSE:', response);
     setMessages(response.documents);
   }
 
-  // Delete
   const deleteMessage = async (message_id) => {
     const response = await databases.deleteDocument(
       DATABASE_ID,

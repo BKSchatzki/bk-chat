@@ -19,8 +19,6 @@ export const AuthProvider = ({children}) => {
   const getUserOnLoad = async () => {
     try {
       const accountDetails = await account.get();
-      // Test for 401 error (Does nothing, await account.get() does not resolve.)
-      console.log(accountDetails);
       setUser(accountDetails);
     } catch(error) {
       console.error(error);
@@ -57,7 +55,6 @@ export const AuthProvider = ({children}) => {
     try {
       let response = await account.create(
         ID.unique(),
-        // Why does it only seem to work when credentials.name is last?
         credentials.email,
         credentials.password,
         credentials.name
@@ -68,7 +65,7 @@ export const AuthProvider = ({children}) => {
       setUser(accountDetails);
       navigate('/');
 
-      console.log('REGISTERED:', response);
+      // console.log('REGISTERED:', response);
     } catch(error) {
       console.error(error);
     }
@@ -83,7 +80,7 @@ export const AuthProvider = ({children}) => {
   
   return (
     <AuthContext.Provider value={contextData}>
-      {loading ? <p>Loading...</p> : children}
+      {loading ? <p>Still Loading...</p> : children}
     </AuthContext.Provider>
   )
 }
