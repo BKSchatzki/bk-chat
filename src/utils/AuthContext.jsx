@@ -13,17 +13,21 @@ export const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    getUserOnLoad();
+    // Console log is temporary. Want to see what this is.
+    console.log(getUserOnLoad());
   }, [])
 
   const getUserOnLoad = async () => {
     try {
       const accountDetails = await account.get();
-      // Test for 401 error
+      // Test for 401 error (Does nothing, await account.get() does not resolve.)
       console.log(accountDetails);
       setUser(accountDetails);
     } catch(error) {
       console.error(error);
+      // What's the issue here?
+      console.log(accountDetails);
+      console.log(error);
     }
     setLoading(false);
   }
