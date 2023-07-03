@@ -25,8 +25,6 @@ export const AuthProvider = ({children}) => {
       setUser(accountDetails);
     } catch(error) {
       console.error(error);
-      // What's the issue here?
-      console.log(accountDetails);
       console.log(error);
     }
     setLoading(false);
