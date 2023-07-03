@@ -130,10 +130,13 @@ const Room = () => {
                 }
                 <small className='message-timestamp'>{new Date(message.$createdAt).toLocaleString()}</small>
                 </p>
-                <Trash2
+                
+                {message.$permissions.includes(`delete(\"user:${user.$id}\")`) &&
+                  (<Trash2
                   className='delete--btn'
                   onClick={() => {deleteMessage(message.$id)}}
-                />
+                  />)
+                }
               </div>
               
               <div className='message--body'>
