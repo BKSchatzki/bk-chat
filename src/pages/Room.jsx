@@ -119,7 +119,13 @@ const Room = () => {
               key={message.$id}
             >
               <div className='message--header'>
+                <p>{
+                  message.username ?
+                  (<span>{message.username}</span>) :
+                  (<span>Anonymous</span>)
+                }
                 <small className='message-timestamp'>{new Date(message.$createdAt).toLocaleString()}</small>
+                </p>
                 <Trash2
                   className='delete--btn'
                   onClick={() => {deleteMessage(message.$id)}}
