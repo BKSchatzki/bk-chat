@@ -3,8 +3,11 @@ import client, { databases, DATABASE_ID, COLLECTION_ID_MESSAGES } from '../appwr
 import { ID, Query } from 'appwrite';
 import { Trash2 } from 'react-feather';
 import Header from '../components/Header';
+import { useAuth } from '../utils/AuthContext';
 
 const Room = () => {
+
+  const {user} = useAuth();
 
   // Set states
   const [messages, setMessages] = useState([]);
