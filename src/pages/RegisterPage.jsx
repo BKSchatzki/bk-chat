@@ -6,6 +6,7 @@ const RegisterPage = () => {
   const {handleUserRegister} = useAuth();
   
   const [credentials, setCredentials] = useState ({
+    name:'',
     email:'',
     password:'',
     passwordConfirm:''
@@ -23,9 +24,21 @@ const RegisterPage = () => {
       <div className="form-wrapper">
         <form onSubmit={(e) => {handleUserRegister(e, credentials)}}>
           <div className="field--wrapper">
-            <label htmlFor='login__email'>Email:</label>
+            <label htmlFor='register__name'>Name:</label>
             <input
-              id="login__email"
+              id="register__name"
+              name="name"
+              placeholder="Enter your name..."
+              required
+              type="text"
+              value={credentials.name}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="field--wrapper">
+            <label htmlFor='register__email'>Email:</label>
+            <input
+              id="register__email"
               name="email"
               placeholder="Enter your email..."
               required
