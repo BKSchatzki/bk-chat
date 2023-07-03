@@ -19,6 +19,8 @@ export const AuthProvider = ({children}) => {
   const getUserOnLoad = async () => {
     try {
       const accountDetails = await account.get();
+      // Test for 401 error
+      console.log(accountDetails);
       setUser(accountDetails);
     } catch(error) {
       console.error(error);
