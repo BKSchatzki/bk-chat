@@ -39,6 +39,8 @@ const Room = () => {
     e.preventDefault();
 
     let payload = {
+      user_id:user.$id,
+      username:user.name,
       body:messageBody
     };
 
