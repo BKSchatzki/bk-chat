@@ -11,13 +11,16 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route element={<PrivateRoutes />}>
-            <Route path="/" element={<Room />} />
-          </Route>
-        </Routes>
+        {/* Wrap Routes in container to style whole app */}
+        <div className="bg-slate-600 min-h-screen min-w-screen">
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route element={<PrivateRoutes />}>
+              <Route path="/" element={<Room />} />
+            </Route>
+          </Routes>
+        </div>
       </AuthProvider>
     </Router>
   );
