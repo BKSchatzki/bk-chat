@@ -1,35 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../utils/AuthContext';
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../utils/AuthContext";
 
 const LoginPage = () => {
-  const {user, handleUserLogin} = useAuth();
+  const { user, handleUserLogin } = useAuth();
   const navigate = useNavigate();
 
-  const [credentials, setCredentials] = useState ({
-    email:'',
-    password:''
-  })
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+  });
 
   useEffect(() => {
-    if(user) {
-      navigate('/');
+    if (user) {
+      navigate("/");
     }
-  })
+  });
 
   const handleInputChange = (e) => {
     let name = e.target.name;
     let value = e.target.value;
 
-    setCredentials({...credentials, [name]:value});
-  }
-  
+    setCredentials({ ...credentials, [name]: value });
+  };
+
   return (
     <div className="auth--container">
       <div className="form-wrapper">
-        <form onSubmit={(e) => {handleUserLogin(e, credentials)}}>
+        <form
+          onSubmit={(e) => {
+            handleUserLogin(e, credentials);
+          }}
+        >
           <div className="field--wrapper">
-            <label htmlFor='login__email'>Email:</label>
+            <label htmlFor="login__email">Email:</label>
             <input
               id="login__email"
               name="email"
@@ -41,7 +45,7 @@ const LoginPage = () => {
             />
           </div>
           <div className="field--wrapper">
-            <label htmlFor='password'>Password:</label>
+            <label htmlFor="password">Password:</label>
             <input
               id="password"
               name="password"
@@ -61,10 +65,12 @@ const LoginPage = () => {
           </div>
         </form>
 
-        <p>Don't have an account? Register <Link to="/register">here</Link>.</p>
+        <p>
+          Don't have an account? Register <Link to="/register">here</Link>.
+        </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default LoginPage;
