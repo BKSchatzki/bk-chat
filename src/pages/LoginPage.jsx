@@ -25,14 +25,14 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="auth--container">
-      <div className="form-wrapper">
+    <div className="auth--container h-screen flex justify-center items-center">
+      <div className="form-wrapper p-8 w-96 border border-white rounded-md">
         <form
           onSubmit={(e) => {
             handleUserLogin(e, credentials);
           }}
         >
-          <div className="field--wrapper">
+          <div className="field--wrapper flex flex-col gap-4">
             <label htmlFor="login__email">Email:</label>
             <input
               id="login__email"
@@ -44,7 +44,7 @@ const LoginPage = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="field--wrapper">
+          <div className="field--wrapper flex flex-col gap-4">
             <label htmlFor="password">Password:</label>
             <input
               id="password"
@@ -56,7 +56,7 @@ const LoginPage = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="field--wrapper">
+          <div className="field--wrapper flex flex-col gap-4">
             <input
               className="btn btn--lg btn--main"
               type="submit"
