@@ -158,7 +158,7 @@ const Room = () => {
                   `delete(\"user:${user.$id}\")`
                 ) && (
                   <Trash2
-                    className="delete--btn text-xs cursor-pointer text-slate-500 hover:text-slate-300 transition duration-150 ease-in-out"
+                    className="delete--btn cursor-pointer -mr-6 text-slate-500 hover:text-slate-300 transition duration-150 ease-in-out"
                     onClick={() => {
                       deleteMessage(message.$id);
                     }}
