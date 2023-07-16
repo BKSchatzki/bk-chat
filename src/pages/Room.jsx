@@ -167,7 +167,7 @@ const Room = () => {
               </div>
 
               <div
-                className={`message--body px-4 py-2 w-fit max-w-[80%] rounded-lg break-normal ${
+                className={`message--body px-4 py-2 w-fit max-w-[80%] rounded-lg break-words ${
                   message.$permissions.includes(`delete(\"user:${user.$id}\")`)
                     ? "message--body--owner self-end bg-gradient-to-b from-emerald-500 to-green-500 shadow-green-300/50 shadow-md"
                     : "bg-slate-500 shadow-slate-300/50 shadow-md"
