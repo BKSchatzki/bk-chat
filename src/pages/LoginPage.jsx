@@ -35,7 +35,7 @@ const LoginPage = () => {
           <div className="field--wrapper flex flex-col gap-4">
             {/* <label htmlFor="login__email">Email:</label> */}
             <input
-              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-full w-full outline-0 p-4 shadow-slate-500/50 shadow-md"
+              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md"
               id="login__email"
               name="email"
               placeholder="Enter your email..."
@@ -48,7 +48,7 @@ const LoginPage = () => {
           <div className="field--wrapper flex flex-col gap-4">
             {/* <label htmlFor="password">Password:</label> */}
             <input
-              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-full w-full outline-0 p-4 shadow-slate-500/50 shadow-md"
+              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md"
               id="password"
               name="password"
               placeholder="Enter password..."
@@ -60,7 +60,7 @@ const LoginPage = () => {
           </div>
           <div className="field--wrapper flex flex-col gap-4">
             <input
-              className="btn btn--lg btn--main p-4 rounded-full cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md"
+              className="btn btn--lg btn--main p-4 rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md"
               type="submit"
               value="Login"
             />
