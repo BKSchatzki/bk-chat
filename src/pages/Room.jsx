@@ -108,7 +108,7 @@ const Room = () => {
             onChange={(e) => {
               setMessageBody(e.target.value);
             }}
-            placeholder="Say something..."
+            placeholder={`Say something, ${user.name} ...`}
             required
             value={messageBody}
           ></textarea>
