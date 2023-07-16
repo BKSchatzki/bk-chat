@@ -25,19 +25,19 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="auth--container h-screen flex justify-center items-center">
-      <div className="form-wrapper p-8 w-96 bg-slate-800 border-b-2 border-slate-600 rounded-3xl shadow-slate-600/50 shadow-xl">
+    <div className="auth--container flex h-screen items-center justify-center">
+      <div className="form-wrapper w-96 rounded-3xl border-b-2 border-slate-600 bg-slate-800 p-8 shadow-xl shadow-slate-600/50">
         <form
           onSubmit={(e) => {
             handleUserLogin(e, credentials);
           }}
         >
-          <div className="field--wrapper flex flex-col mb-4">
+          <div className="field--wrapper mb-4 flex flex-col">
             <label className="hidden" htmlFor="login__email">
               Email:
             </label>
             <input
-              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-300 hover:bg-slate-600 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white placeholder:text-slate-400"
+              className="w-full rounded-lg border-0 border-b-2 border-slate-500 bg-slate-700 p-4 shadow-md shadow-slate-500/50 outline-0 transition duration-300 ease-in-out placeholder:text-slate-400 hover:bg-slate-600 focus:-translate-y-1 focus:bg-slate-600 focus:text-white focus:shadow-lg focus:shadow-slate-400/50"
               id="login__email"
               name="email"
               placeholder="Enter your email ~"
@@ -47,12 +47,12 @@ const LoginPage = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="field--wrapper flex flex-col mb-4">
+          <div className="field--wrapper mb-4 flex flex-col">
             <label className="hidden" htmlFor="password">
               Password:
             </label>
             <input
-              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-300 hover:bg-slate-600 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white placeholder:text-slate-400"
+              className="w-full rounded-lg border-0 border-b-2 border-slate-500 bg-slate-700 p-4 shadow-md shadow-slate-500/50 outline-0 transition duration-300 ease-in-out placeholder:text-slate-400 hover:bg-slate-600 focus:-translate-y-1 focus:bg-slate-600 focus:text-white focus:shadow-lg focus:shadow-slate-400/50"
               id="password"
               name="password"
               placeholder="Enter your password ~"
@@ -62,18 +62,18 @@ const LoginPage = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="field--wrapper flex flex-col mb-4">
+          <div className="field--wrapper mb-4 flex flex-col">
             <input
-              className="btn btn--lg btn--main p-4 rounded-lg cursor-pointer bg-emerald-600 shadow-emerald-400/50 shadow-md font-bold uppercase transition ease-in-out duration-300 hover:bg-emerald-500 hover:shadow-emerald-300/50 active:translate-y-1 active:bg-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
+              className="btn btn--lg btn--main cursor-pointer rounded-lg bg-emerald-600 p-4 font-bold uppercase shadow-md shadow-emerald-400/50 transition duration-300 ease-in-out hover:bg-emerald-500 hover:shadow-emerald-300/50 active:translate-y-1 active:bg-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
               type="submit"
               value="Login"
             />
           </div>
         </form>
-        <p className="text-center cursor-default">
+        <p className="cursor-default text-center">
           Don't have an account?{" "}
           <Link
-            className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-300 hover:to-emerald-300"
+            className="bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text font-bold text-transparent hover:from-green-300 hover:to-emerald-300"
             to="/register"
           >
             Register here ~

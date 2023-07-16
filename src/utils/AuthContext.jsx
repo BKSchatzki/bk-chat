@@ -1,54 +1,56 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { account } from "../appwriteConfig";
 import { useNavigate } from "react-router-dom";
-import { ID } from 'appwrite';
+import { ID } from "appwrite";
 
-const AuthContext = createContext()
+const AuthContext = createContext();
 
-export const AuthProvider = ({children}) => {
-  
+export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
-  const [loading, setLoading] = useState(true)
-  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     getUserOnLoad();
-  }, [])
+  }, []);
 
   const getUserOnLoad = async () => {
     try {
       const accountDetails = await account.get();
       setUser(accountDetails);
-    } catch(error) {
+    } catch (error) {
       console.error(error);
     }
     setLoading(false);
-  }
+  };
 
   const handleUserLogin = async (e, credentials) => {
     e.preventDefault();
 
     try {
-      const response = await account.createEmailSession(credentials.email, credentials.password);
+      const response = await account.createEmailSession(
+        credentials.email,
+        credentials.password,
+      );
       const accountDetails = await account.get();
       setUser(accountDetails);
-      navigate('/');
-    } catch(error) {
+      navigate("/");
+    } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   const handleUserLogout = async () => {
-    await account.deleteSession('current');
+    await account.deleteSession("current");
     setUser(null);
-  }
+  };
 
   const handleUserRegister = async (e, credentials) => {
     e.preventDefault();
 
     if (credentials.password !== credentials.passwordConfirm) {
-      alert('Passwords do not match.');
+      alert("Passwords do not match.");
       return;
     }
 
@@ -57,36 +59,36 @@ export const AuthProvider = ({children}) => {
         ID.unique(),
         credentials.email,
         credentials.password,
-        credentials.name
-        );
+        credentials.name,
+      );
 
       await account.createEmailSession(credentials.email, credentials.password);
       const accountDetails = await account.get();
       setUser(accountDetails);
-      navigate('/');
+      navigate("/");
 
       // console.log('REGISTERED:', response);
-    } catch(error) {
+    } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   const contextData = {
     user,
     handleUserLogin,
     handleUserLogout,
-    handleUserRegister
-  }
-  
+    handleUserRegister,
+  };
+
   return (
     <AuthContext.Provider value={contextData}>
       {loading ? <p>Still Loading...</p> : children}
     </AuthContext.Provider>
-  )
-}
+  );
+};
 
 export const useAuth = () => {
-  return useContext(AuthContext)
-}
+  return useContext(AuthContext);
+};
 
-export default AuthContext
+export default AuthContext;

@@ -12,7 +12,7 @@ function App() {
     <Router>
       <AuthProvider>
         {/* Wrap Routes in container to style whole app */}
-        <div className="bg-slate-900 min-h-screen min-w-screen text-slate-100">
+        <div className="min-w-screen min-h-screen bg-slate-900 text-slate-100">
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
