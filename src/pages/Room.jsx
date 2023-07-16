@@ -90,7 +90,7 @@ const Room = () => {
   };
 
   return (
-    <main className="container max-w-screen-sm mx-auto py-8">
+    <main className="container max-w-screen-sm mx-auto -mt-4 pb-8">
       <Header />
 
       <div className="room--container p-8 bg-slate-800 rounded-3xl shadow-slate-600/50 shadow-xl">

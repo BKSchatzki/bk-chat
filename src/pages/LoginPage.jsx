@@ -64,7 +64,7 @@ const LoginPage = () => {
           </div>
           <div className="field--wrapper flex flex-col mb-4">
             <input
-              className="btn btn--lg btn--main p-4 rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md font-bold uppercase transition ease-in-out active:translate-y-1 active:from-green-600 active:to-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
+              className="btn btn--lg btn--main p-4 rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md font-bold uppercase transition ease-in-out duration-300 active:translate-y-1 active:from-green-600 active:to-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
               type="submit"
               value="Login"
             />
