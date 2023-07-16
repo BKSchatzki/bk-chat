@@ -100,8 +100,10 @@ const Room = () => {
           id="message--form"
           onSubmit={handleSubmit}
         >
-          {/* <div> */}
           <textarea
+            className={
+              "bg-slate-700 mb-4 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 h-32 resize-none shadow-slate-500/50 shadow-md transition ease-in-out duration-300 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white"
+            }
             maxLength="1000"
             onChange={(e) => {
               setMessageBody(e.target.value);
@@ -110,9 +112,12 @@ const Room = () => {
             required
             value={messageBody}
           ></textarea>
-          {/* </div> */}
           <div className="send-btn--wrapper">
-            <input className="btn btn--secondary" type="submit" value="Send" />
+            <input
+              className="btn btn--secondary mb-4 p-4 w-full rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md font-bold uppercase transition ease-in-out active:translate-y-1 active:from-green-600 active:to-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
+              type="submit"
+              value="Send"
+            />
           </div>
         </form>
 
