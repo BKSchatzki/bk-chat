@@ -125,25 +125,40 @@ const Room = () => {
               className="message--wrapper flex flex-wrap flex-col m-4"
               key={message.$id}
             >
-              <div className="message--header flex justify-between items-center">
-                <p>
-                  {message.username ? (
-                    <span className="mx-2 text-slate-200">
-                      {message.username}
-                    </span>
-                  ) : (
-                    <span>Anonymous</span>
-                  )}
-                  <small className="message-timestamp mx-2 text-slate-400">
+              <div
+                className={`message--header mb-1 flex items-center ${
+                  message.$permissions.includes(`delete(\"user:${user.$id}\")`)
+                    ? "justify-end"
+                    : ""
+                }`}
+              >
+                <div
+                  className={`flex items-center ${
+                    message.$permissions.includes(
+                      `delete(\"user:${user.$id}\")`
+                    )
+                      ? "flex-row-reverse"
+                      : ""
+                  }`}
+                >
+                  <span>
+                    {message.username ? (
+                      <span className="mx-2 text-slate-200 text-md">
+                        {message.username}
+                      </span>
+                    ) : (
+                      <span>Anonymous</span>
+                    )}
+                  </span>
+                  <small className="message-timestamp mx-2 text-slate-400 text-xs">
                     {new Date(message.$createdAt).toLocaleString()}
                   </small>
-                </p>
-
+                </div>
                 {message.$permissions.includes(
                   `delete(\"user:${user.$id}\")`
                 ) && (
                   <Trash2
-                    className="delete--btn cursor-pointer text-slate-500 hover:text-slate-300 transition duration-150 ease-in-out"
+                    className="delete--btn text-xs cursor-pointer text-slate-500 hover:text-slate-300 transition duration-150 ease-in-out"
                     onClick={() => {
                       deleteMessage(message.$id);
                     }}
@@ -154,7 +169,7 @@ const Room = () => {
               <div
                 className={`message--body px-4 py-2 w-fit max-w-[80%] rounded-lg break-normal ${
                   message.$permissions.includes(`delete(\"user:${user.$id}\")`)
-                    ? "bg-gradient-to-b from-emerald-500 to-green-500 shadow-green-300/50 shadow-md"
+                    ? "message--body--owner self-end bg-gradient-to-b from-emerald-500 to-green-500 shadow-green-300/50 shadow-md"
                     : "bg-slate-500 shadow-slate-300/50 shadow-md"
                 }`}
               >
