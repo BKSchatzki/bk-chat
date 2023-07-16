@@ -58,17 +58,22 @@ const LoginPage = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="field--wrapper flex flex-col gap-4">
+          <div className="field--wrapper flex flex-col">
             <input
-              className="btn btn--lg btn--main p-4 rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md "
+              className="btn btn--lg btn--main p-4 rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md font-bold uppercase transition ease-in-out active:translate-y-1 active:from-green-600 active:to-emerald-600"
               type="submit"
               value="Login"
             />
           </div>
         </form>
-
-        <p>
-          Don't have an account? Register <Link to="/register">here</Link>.
+        <p className="text-center mt-4">
+          Don't have an account?{" "}
+          <Link
+            className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-300 hover:to-emerald-300"
+            to="/register"
+          >
+            Register here.
+          </Link>
         </p>
       </div>
     </div>
