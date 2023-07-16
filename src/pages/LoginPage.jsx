@@ -33,9 +33,11 @@ const LoginPage = () => {
           }}
         >
           <div className="field--wrapper flex flex-col mb-4">
-            {/* <label htmlFor="login__email">Email:</label> */}
+            <label className="hidden" htmlFor="login__email">
+              Email:
+            </label>
             <input
-              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-500 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white"
+              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-300 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white"
               id="login__email"
               name="email"
               placeholder="Enter your email..."
@@ -46,9 +48,11 @@ const LoginPage = () => {
             />
           </div>
           <div className="field--wrapper flex flex-col mb-4">
-            {/* <label htmlFor="password">Password:</label> */}
+            <label className="hidden" htmlFor="password">
+              Password:
+            </label>
             <input
-              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-500 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white"
+              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-300 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white"
               id="password"
               name="password"
               placeholder="Enter password..."
