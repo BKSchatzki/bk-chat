@@ -90,23 +90,27 @@ const Room = () => {
   };
 
   return (
-    <main className="container">
+    <main className="container max-w-screen-sm mx-auto py-8">
       <Header />
 
-      <div className="room--container">
-        <form action="" id="message--form" onSubmit={handleSubmit}>
-          <div>
-            <textarea
-              maxLength="1000"
-              onChange={(e) => {
-                setMessageBody(e.target.value);
-              }}
-              placeholder="Say something..."
-              required
-              value={messageBody}
-            ></textarea>
-          </div>
-
+      <div className="room--container p-8 bg-slate-800 rounded-3xl shadow-slate-600/50 shadow-xl">
+        <form
+          action=""
+          className="flex flex-col"
+          id="message--form"
+          onSubmit={handleSubmit}
+        >
+          {/* <div> */}
+          <textarea
+            maxLength="1000"
+            onChange={(e) => {
+              setMessageBody(e.target.value);
+            }}
+            placeholder="Say something..."
+            required
+            value={messageBody}
+          ></textarea>
+          {/* </div> */}
           <div className="send-btn--wrapper">
             <input className="btn btn--secondary" type="submit" value="Send" />
           </div>
