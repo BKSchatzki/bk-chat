@@ -60,7 +60,7 @@ const LoginPage = () => {
           </div>
           <div className="field--wrapper flex flex-col gap-4">
             <input
-              className="btn btn--lg btn--main p-4 rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md"
+              className="btn btn--lg btn--main p-4 rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md "
               type="submit"
               value="Login"
             />

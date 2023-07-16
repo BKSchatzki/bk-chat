@@ -1,30 +1,34 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useAuth } from '../utils/AuthContext';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../utils/AuthContext";
 
 const RegisterPage = () => {
-  const {handleUserRegister} = useAuth();
-  
-  const [credentials, setCredentials] = useState ({
-    name:'',
-    email:'',
-    password:'',
-    passwordConfirm:''
-  })
+  const { handleUserRegister } = useAuth();
+
+  const [credentials, setCredentials] = useState({
+    name: "",
+    email: "",
+    password: "",
+    passwordConfirm: "",
+  });
 
   const handleInputChange = (e) => {
     let name = e.target.name;
     let value = e.target.value;
 
-    setCredentials({...credentials, [name]:value});
-  }
+    setCredentials({ ...credentials, [name]: value });
+  };
 
   return (
     <div className="auth--container">
       <div className="form-wrapper">
-        <form onSubmit={(e) => {handleUserRegister(e, credentials)}}>
+        <form
+          onSubmit={(e) => {
+            handleUserRegister(e, credentials);
+          }}
+        >
           <div className="field--wrapper">
-            <label htmlFor='register__name'>Name:</label>
+            <label htmlFor="register__name">Name:</label>
             <input
               id="register__name"
               name="name"
@@ -36,7 +40,7 @@ const RegisterPage = () => {
             />
           </div>
           <div className="field--wrapper">
-            <label htmlFor='register__email'>Email:</label>
+            <label htmlFor="register__email">Email:</label>
             <input
               id="register__email"
               name="email"
@@ -48,7 +52,7 @@ const RegisterPage = () => {
             />
           </div>
           <div className="field--wrapper">
-            <label htmlFor='password'>Password:</label>
+            <label htmlFor="password">Password:</label>
             <input
               id="password"
               name="password"
@@ -60,7 +64,7 @@ const RegisterPage = () => {
             />
           </div>
           <div className="field--wrapper">
-            <label htmlFor='passwordConfirm'>Confirm Password:</label>
+            <label htmlFor="passwordConfirm">Confirm Password:</label>
             <input
               id="passwordConfirm"
               name="passwordConfirm"
@@ -80,10 +84,12 @@ const RegisterPage = () => {
           </div>
         </form>
 
-        <p>Already have an account? Log in <Link to="/login">here</Link>.</p>
+        <p>
+          Already have an account? Log in <Link to="/login">here</Link>.
+        </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default RegisterPage;
