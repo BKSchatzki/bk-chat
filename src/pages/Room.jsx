@@ -112,7 +112,7 @@ const Room = () => {
           ></textarea>
           <div className="send-btn--wrapper">
             <input
-              className="btn btn--secondary mb-4 p-4 w-full rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md font-bold uppercase transition ease-in-out duration-300 active:translate-y-1 active:from-green-600 active:to-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
+              className="btn btn--secondary mb-4 p-4 w-full rounded-lg cursor-pointer bg-emerald-600 shadow-emerald-400/50 shadow-md font-bold uppercase transition ease-in-out duration-300 hover:bg-emerald-500 hover:shadow-emerald-300/50 active:translate-y-1 active:bg-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
               type="submit"
               value="Send"
             />
