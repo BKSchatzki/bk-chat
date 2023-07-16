@@ -106,7 +106,7 @@ const Room = () => {
             onChange={(e) => {
               setMessageBody(e.target.value);
             }}
-            placeholder={`Say something, ${user.name} ...`}
+            placeholder={`Say something, ${user.name} ~`}
             required
             value={messageBody}
           ></textarea>
@@ -133,7 +133,7 @@ const Room = () => {
                 }`}
               >
                 <div
-                  className={`flex items-center ${
+                  className={`flex items-center cursor-default ${
                     message.$permissions.includes(
                       `delete(\"user:${user.$id}\")`
                     )
@@ -167,10 +167,10 @@ const Room = () => {
               </div>
 
               <div
-                className={`message--body px-4 py-2 w-fit max-w-[80%] rounded-lg break-words ${
+                className={`message--body px-4 py-2 w-fit max-w-[80%] rounded-lg break-words cursor-default ${
                   message.$permissions.includes(`delete(\"user:${user.$id}\")`)
-                    ? "message--body--owner self-end bg-gradient-to-b from-emerald-500 to-green-500 shadow-green-300/50 shadow-md"
-                    : "bg-slate-500 shadow-slate-300/50 shadow-md"
+                    ? "message--body--owner self-end bg-emerald-500 shadow-emerald-300/50 shadow-md transition ease-in-out duration-300 hover:bg-emerald-400 hover:shadow-emerald-300/50"
+                    : "bg-slate-600 shadow-slate-400/50 shadow-md transition ease-in-out duration-300 hover:bg-slate-500 hover:shadow-slate-300/50"
                 }`}
               >
                 <span>{message.body}</span>

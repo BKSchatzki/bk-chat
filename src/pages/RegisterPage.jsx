@@ -35,7 +35,7 @@ const RegisterPage = () => {
               className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-300 hover:bg-slate-600 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white placeholder:text-slate-400"
               id="register__name"
               name="name"
-              placeholder="Enter your name..."
+              placeholder="Enter your chosen name ~"
               required
               type="text"
               value={credentials.name}
@@ -50,7 +50,7 @@ const RegisterPage = () => {
               className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-300 hover:bg-slate-600 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white placeholder:text-slate-400"
               id="register__email"
               name="email"
-              placeholder="Enter your email..."
+              placeholder="Enter your email ~"
               required
               type="email"
               value={credentials.email}
@@ -65,7 +65,7 @@ const RegisterPage = () => {
               className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-300 hover:bg-slate-600 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white placeholder:text-slate-400"
               id="password"
               name="password"
-              placeholder="Enter password..."
+              placeholder="Choose a password ~"
               required
               type="password"
               value={credentials.password}
@@ -80,7 +80,7 @@ const RegisterPage = () => {
               className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-300 hover:bg-slate-600 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white placeholder:text-slate-400"
               id="passwordConfirm"
               name="passwordConfirm"
-              placeholder="Confirm password..."
+              placeholder="Confirm your password ~"
               required
               type="password"
               value={credentials.passwordConfirm}
@@ -102,7 +102,7 @@ const RegisterPage = () => {
             className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-300 hover:to-emerald-300"
             to="/login"
           >
-            Log in here.
+            Log in here ~
           </Link>
         </p>
       </div>
