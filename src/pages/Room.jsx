@@ -101,7 +101,7 @@ const Room = () => {
           onSubmit={handleSubmit}
         >
           <textarea
-            className="bg-slate-700 mb-4 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 h-32 resize-none shadow-slate-500/50 shadow-md transition ease-in-out duration-300 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white placeholder:text-slate-400"
+            className="bg-slate-700 mb-4 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 h-32 resize-none shadow-slate-500/50 shadow-md transition ease-in-out duration-300 hover:bg-slate-600 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white placeholder:text-slate-400"
             maxLength="1000"
             onChange={(e) => {
               setMessageBody(e.target.value);
