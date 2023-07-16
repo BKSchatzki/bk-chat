@@ -35,7 +35,7 @@ const LoginPage = () => {
           <div className="field--wrapper flex flex-col mb-4">
             {/* <label htmlFor="login__email">Email:</label> */}
             <input
-              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out focus:-translate-y-1 focus:shadow-lg"
+              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-500 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white"
               id="login__email"
               name="email"
               placeholder="Enter your email..."
@@ -48,7 +48,7 @@ const LoginPage = () => {
           <div className="field--wrapper flex flex-col mb-4">
             {/* <label htmlFor="password">Password:</label> */}
             <input
-              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md"
+              className="bg-slate-700 border-0 border-b-2 border-slate-500 rounded-lg w-full outline-0 p-4 shadow-slate-500/50 shadow-md transition ease-in-out duration-500 focus:-translate-y-1 focus:bg-slate-600 focus:shadow-lg focus:shadow-slate-400/50 focus:text-white"
               id="password"
               name="password"
               placeholder="Enter password..."
@@ -60,7 +60,7 @@ const LoginPage = () => {
           </div>
           <div className="field--wrapper flex flex-col mb-4">
             <input
-              className="btn btn--lg btn--main p-4 rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md font-bold uppercase transition ease-in-out active:translate-y-1 active:from-green-600 active:to-emerald-600"
+              className="btn btn--lg btn--main p-4 rounded-lg cursor-pointer bg-gradient-to-b from-green-500 to-emerald-500 shadow-emerald-300/50 shadow-md font-bold uppercase transition ease-in-out active:translate-y-1 active:from-green-600 active:to-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
               type="submit"
               value="Login"
             />
