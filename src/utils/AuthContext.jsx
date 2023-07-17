@@ -74,8 +74,10 @@ export const AuthProvider = ({ children }) => {
 
       console.log("REGISTERED:", response);
     } catch (error) {
-      // console.error(error);
-      setRegisterError("This email address is already taken ~");
+      console.error(error);
+      setRegisterError(
+        "Oops, this could be too many attempts, or the email address might already be taken ~",
+      );
     }
   };
 
