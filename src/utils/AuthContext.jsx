@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     getUserOnLoad();
@@ -38,6 +39,7 @@ export const AuthProvider = ({ children }) => {
       navigate("/");
     } catch (error) {
       console.error(error);
+      setErrorMessage("Invalid credentials. Please try again ~");
     }
   };
 
@@ -75,6 +77,7 @@ export const AuthProvider = ({ children }) => {
 
   const contextData = {
     user,
+    errorMessage,
     handleUserLogin,
     handleUserLogout,
     handleUserRegister,
