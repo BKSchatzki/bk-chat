@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../utils/AuthContext";
 
 const LoginPage = () => {
-  const { user, handleUserLogin, errorMessage } = useAuth();
+  const { user, handleUserLogin, loginError } = useAuth();
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
@@ -79,9 +79,9 @@ const LoginPage = () => {
             Register here ~
           </Link>
         </p>
-        {errorMessage && (
+        {loginError && (
           <p className="-mb-6 cursor-default text-center text-red-500">
-            {errorMessage}
+            {loginError}
           </p>
         )}
       </div>

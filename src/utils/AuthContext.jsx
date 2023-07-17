@@ -10,7 +10,8 @@ export const AuthProvider = ({ children }) => {
 
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [loginError, setLoginError] = useState("");
+  const [registerError, setRegisterError] = useState("");
 
   useEffect(() => {
     getUserOnLoad();
@@ -39,7 +40,7 @@ export const AuthProvider = ({ children }) => {
       navigate("/");
     } catch (error) {
       console.error(error);
-      setErrorMessage("Invalid credentials. Please try again ~");
+      setLoginError("Invalid credentials. Please try again ~");
     }
   };
 
@@ -52,9 +53,9 @@ export const AuthProvider = ({ children }) => {
     e.preventDefault();
 
     if (credentials.password.length < 8 || credentials.passwordConfirm < 8) {
-      setErrorMessage("Password must be at least 8 characters ~");
+      setRegisterError("Password must be at least 8 characters ~");
     } else if (credentials.password !== credentials.passwordConfirm) {
-      setErrorMessage("Passwords do not match ~");
+      setRegisterError("Passwords do not match ~");
       return;
     }
 
@@ -79,7 +80,8 @@ export const AuthProvider = ({ children }) => {
 
   const contextData = {
     user,
-    errorMessage,
+    loginError,
+    registerError,
     handleUserLogin,
     handleUserLogout,
     handleUserRegister,
