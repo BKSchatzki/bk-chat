@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
       setUser(accountDetails);
       navigate("/");
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       setLoginError("Invalid credentials. Please try again ~");
     }
   };
@@ -72,9 +72,10 @@ export const AuthProvider = ({ children }) => {
       setUser(accountDetails);
       navigate("/");
 
-      // console.log('REGISTERED:', response);
+      console.log("REGISTERED:", response);
     } catch (error) {
-      console.error(error);
+      // console.error(error);
+      setRegisterError("This email address is already taken ~");
     }
   };
 
