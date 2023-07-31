@@ -166,8 +166,8 @@ const Room = () => {
               <div
                 className={`w-fit max-w-[80%] cursor-default break-words rounded-lg px-4 py-2 ${
                   message.$permissions.includes(`delete(\"user:${user.$id}\")`)
-                    ? "self-end bg-emerald-500 shadow-md shadow-emerald-300/50 transition duration-300 ease-in-out hover:bg-emerald-400 hover:shadow-emerald-300/50"
-                    : "bg-slate-600 shadow-md shadow-slate-400/50 transition duration-300 ease-in-out hover:bg-slate-500 hover:shadow-slate-300/50"
+                    ? "self-end bg-emerald-500 shadow-sm shadow-emerald-300/50 transition duration-300 ease-in-out hover:bg-emerald-400 hover:shadow-emerald-300/50"
+                    : "bg-slate-600 shadow-sm shadow-slate-400/50 transition duration-300 ease-in-out hover:bg-slate-500 hover:shadow-slate-300/50"
                 }`}
               >
                 <span>{message.body}</span>
