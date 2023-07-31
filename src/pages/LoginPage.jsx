@@ -25,14 +25,14 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="auth--container flex h-screen items-center justify-center">
-      <div className="form-wrapper w-96 rounded-3xl border-b-2 border-slate-600 bg-slate-800 p-8 shadow-xl shadow-slate-600/50">
+    <div className="flex h-screen items-center justify-center">
+      <div className="w-96 rounded-3xl border-b-2 border-slate-600 bg-slate-800 p-8 shadow-xl shadow-slate-600/50">
         <form
           onSubmit={(e) => {
             handleUserLogin(e, credentials);
           }}
         >
-          <div className="field--wrapper mb-4 flex flex-col">
+          <div className="mb-4 flex flex-col">
             <label className="hidden" htmlFor="login__email">
               Email:
             </label>
@@ -47,7 +47,7 @@ const LoginPage = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="field--wrapper mb-4 flex flex-col">
+          <div className="mb-4 flex flex-col">
             <label className="hidden" htmlFor="password">
               Password:
             </label>
@@ -62,7 +62,7 @@ const LoginPage = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="field--wrapper mb-4 flex flex-col">
+          <div className="mb-4 flex flex-col">
             <input
               className="btn btn--lg btn--main cursor-pointer rounded-lg bg-emerald-600 p-4 font-bold uppercase shadow-md shadow-emerald-400/50 transition duration-300 ease-in-out hover:bg-emerald-500 hover:shadow-emerald-300/50 active:translate-y-1 active:bg-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
               type="submit"

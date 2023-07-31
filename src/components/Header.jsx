@@ -14,7 +14,7 @@ const Header = () => {
         <>
           <span>Welcome, {user.name} ~</span>
           <LogOut
-            className="header--link cursor-pointer text-slate-600 transition duration-150 ease-in-out hover:text-slate-400"
+            className="cursor-pointer text-slate-600 transition duration-150 ease-in-out hover:text-slate-400"
             onClick={handleUserLogout}
           />
         </>

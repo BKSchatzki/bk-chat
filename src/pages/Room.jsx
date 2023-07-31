@@ -90,10 +90,10 @@ const Room = () => {
   };
 
   return (
-    <main className="container mx-auto -mt-4 max-w-screen-sm pb-8">
+    <main className="mx-auto -mt-4 max-w-screen-sm pb-8">
       <Header />
 
-      <div className="room--container rounded-3xl bg-slate-800 p-8 shadow-xl shadow-slate-600/50">
+      <div className="rounded-3xl bg-slate-800 p-8 shadow-xl shadow-slate-600/50">
         <form
           action=""
           className="flex flex-col"
@@ -110,9 +110,9 @@ const Room = () => {
             required
             value={messageBody}
           ></textarea>
-          <div className="send-btn--wrapper">
+          <div className="">
             <input
-              className="btn btn--secondary mb-4 w-full cursor-pointer rounded-lg bg-emerald-600 p-4 font-bold uppercase shadow-md shadow-emerald-400/50 transition duration-300 ease-in-out hover:bg-emerald-500 hover:shadow-emerald-300/50 active:translate-y-1 active:bg-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
+              className="mb-4 w-full cursor-pointer rounded-lg bg-emerald-600 p-4 font-bold uppercase shadow-md shadow-emerald-400/50 transition duration-300 ease-in-out hover:bg-emerald-500 hover:shadow-emerald-300/50 active:translate-y-1 active:bg-emerald-600 active:shadow-sm active:shadow-emerald-400/50"
               type="submit"
               value="Send"
             />
@@ -121,12 +121,9 @@ const Room = () => {
 
         <div>
           {messages.map((message) => (
-            <div
-              className="message--wrapper m-4 flex flex-col flex-wrap"
-              key={message.$id}
-            >
+            <div className="m-4 flex flex-col flex-wrap" key={message.$id}>
               <div
-                className={`message--header mb-1 flex items-center ${
+                className={`mb-1 flex items-center ${
                   message.$permissions.includes(`delete(\"user:${user.$id}\")`)
                     ? "justify-end"
                     : ""
@@ -150,7 +147,7 @@ const Room = () => {
                       <span>Anonymous</span>
                     )}
                   </span>
-                  <small className="message-timestamp mx-2 text-xs text-slate-400">
+                  <small className="mx-2 text-xs text-slate-400">
                     {new Date(message.$createdAt).toLocaleString()}
                   </small>
                 </div>
@@ -158,7 +155,7 @@ const Room = () => {
                   `delete(\"user:${user.$id}\")`,
                 ) && (
                   <Trash2
-                    className="delete--btn -mr-6 cursor-pointer text-slate-500 transition duration-150 ease-in-out hover:text-slate-300"
+                    className="-mr-6 cursor-pointer text-slate-500 transition duration-150 ease-in-out hover:text-slate-300"
                     onClick={() => {
                       deleteMessage(message.$id);
                     }}
@@ -167,9 +164,9 @@ const Room = () => {
               </div>
 
               <div
-                className={`message--body w-fit max-w-[80%] cursor-default break-words rounded-lg px-4 py-2 ${
+                className={`w-fit max-w-[80%] cursor-default break-words rounded-lg px-4 py-2 ${
                   message.$permissions.includes(`delete(\"user:${user.$id}\")`)
-                    ? "message--body--owner self-end bg-emerald-500 shadow-md shadow-emerald-300/50 transition duration-300 ease-in-out hover:bg-emerald-400 hover:shadow-emerald-300/50"
+                    ? "self-end bg-emerald-500 shadow-md shadow-emerald-300/50 transition duration-300 ease-in-out hover:bg-emerald-400 hover:shadow-emerald-300/50"
                     : "bg-slate-600 shadow-md shadow-slate-400/50 transition duration-300 ease-in-out hover:bg-slate-500 hover:shadow-slate-300/50"
                 }`}
               >
