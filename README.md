@@ -10,11 +10,11 @@ A chatroom with login and registration using the Appwrite backend. Plans to incl
 
 **Tech used:** Vite, React, Tailwind, Appwrite
 
-Appwrite enables several things. Instead of architecting a backend, you run CRUD methods on a backend you define in the Appwrite dashboard. The advantage is that you get a library of features you can basically call with a single method, and advanced functionality such as live updates don't need to rely on websockets; it's all native to Appwrite. Even local auth is handled totally in-house. I also installed react-router-dom for protected routes and auto-redirects, although that came with several pitfalls as written below.
+Appwrite enables several things. Instead of architecting a backend, you run CRUD methods on a backend you define in the Appwrite dashboard. The advantage is that you get a library of features you can basically call with a single method, and advanced functionality such as live updates don't need to rely on WebSockets; it's all native to Appwrite. Even local auth is handled totally in-house. I also installed react-router-dom for protected routes and auto-redirects, although that came with several pitfalls as written below.
 
 ## Optimizations
 
-I added several features focused on improving the front-end experience. Initially, invalid forms did not display an error to the user, so I added error messages there. There was also no conditional styling for the chat bubbles so that was added. I also added some hover, focus, and active classes to make the app pseudoskeuomorphic.
+I added several features focused on improving the front-end experience. Initially, invalid forms did not display an error to the user, so I added error messages there. There was also no conditional styling for the chat bubbles so that was added. I also added some hover, focus, and active classes to make the app pseudo-skeuomorphic.
 
 ## Lessons Learned:
 
@@ -22,7 +22,7 @@ The largest issue with this app is the use of client-side routing. The only get 
 
 ## Examples:
 
-Take a look at these couple examples that I have in my own portfolio:
+Take a look at some more examples in my portfolio:
 
 **Songstruct:** https://github.com/BKSchatzki/songstruct
 
