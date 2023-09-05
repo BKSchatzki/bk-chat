@@ -24,8 +24,10 @@ The largest issue with this app is the use of client-side routing. The only get 
 
 Take a look at some more examples in my portfolio:
 
-**Songstruct:** https://github.com/BKSchatzki/songstruct
-
 **C Flat Run:** https://github.com/BKSchatzki/cflatrun-landingpage
 
 **Nick B. Schatzki:** https://github.com/BKSchatzki/nbs-portfolio
+
+**Songstruct:** https://github.com/BKSchatzki/songstruct
+
+**SongStrudel:** https://github.com/BKSchatzki/songstrudel
